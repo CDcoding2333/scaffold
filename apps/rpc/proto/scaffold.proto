@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto;
+
+message PingReq {
+    string msg = 1;
+}
+
+message PingResp {
+    string pong = 1 [json_name = 'pong'];
+}
+
+service ContentService {
+    //! 获取文章详情
+    rpc Ping (PingReq) returns (PingResp) {}
+}
